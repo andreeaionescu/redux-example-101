@@ -19,5 +19,5 @@ export const toggleBook = id => ({
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_IN_PROGREES: 'SHOW_IN_PROGREES'
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
 }

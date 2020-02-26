@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.png';
+import AddBook from './containers/AddBook'
+import VisibleBookList from './containers/VisibleBookList'
 import './App.css';
 
 function App() {
@@ -8,7 +10,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <div id="main" role="main">content</div>
+      <div id="main" role="main">
+        <AddBook />
+        <VisibleBookList />
+      </div>
     </div>
   );
 }
