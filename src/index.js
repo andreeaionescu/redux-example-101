@@ -6,7 +6,21 @@ import { createStore } from 'redux';
 import './index.css';
 import App from './App';
 
-const store = createStore(rootReducer)
+const initialState = {
+    books: [{
+        id: 0,
+        title: 'Design Patterns by GoF',
+        completed: false
+    },
+    {
+        id: 1,
+        title: 'Clean code by Robert Martin',
+        completed: false
+    }],
+    visibilityFilter: 'SHOW_ALL'
+}
+
+const store = createStore(rootReducer, initialState)
 
 ReactDOM.render(
     <Provider store={store}>

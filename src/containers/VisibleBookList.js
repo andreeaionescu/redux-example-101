@@ -16,7 +16,7 @@ const getVisibleBooks = (books, filter) => {
   }
 }
 const mapStateToProps = state => ({
-  todos: getVisibleBooks(state.books, state.visibilityFilter)
+  books: getVisibleBooks(state.books, state.visibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({

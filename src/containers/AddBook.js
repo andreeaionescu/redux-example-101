@@ -6,22 +6,32 @@ class AddBook extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {title: ''};
     
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }
-
+    
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({title: event.target.value});
+    }
+    
+    handleSubmit(event) {
+        event.preventDefault();
+        if (this.state.title !== ''){
+            this.props.handleAddBook(this.state.title)
+            // reset input box
+            this.setState({title: ''})
+        }
     }
 
     render(){
         return <div>
-                    <form onSubmit={event => this.props.handleAddBook(event.target.value)}>
-                        <label>Name 
-                            <input type="text" value={this.state.value} onChange={this.handleChange} />
-                        </label>
-                        
+                    <form onSubmit={this.handleSubmit}>
+                        <input  placeholder='Type a book title...'
+                                value={this.state.title}
+                                onChange={this.handleChange}
+                        />
                         <button type="submit">Add Book</button>
                     </form>
                 </div>
@@ -32,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
     handleAddBook: value => dispatch(addBook(value))
 })
 
-export default connect(mapDispatchToProps)(AddBook)
+export default connect(null, mapDispatchToProps)(AddBook)
