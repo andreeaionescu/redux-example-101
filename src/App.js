@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.png';
-import AddBook from './containers/AddBook'
-import VisibleBookList from './containers/VisibleBookList'
+import AddBook from './containers/AddBook';
+import VisibleBookList from './containers/VisibleBookList';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div id="main" role="main">
         <AddBook />
         <VisibleBookList />
+        <Footer />
       </div>
     </div>
   );
